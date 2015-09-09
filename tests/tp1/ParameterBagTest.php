@@ -83,6 +83,8 @@ class ParameterBagTest extends \PHPUnit_Framework_TestCase
             'key2' => 'value2', 
             'key3' => '4value3'
         ), $this->bag->all());
+
+        
     }
 
     public function testKeys()
