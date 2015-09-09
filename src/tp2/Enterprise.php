@@ -6,9 +6,11 @@ use tp2\Person;
 
 class Enterprise
 {
+    protected $persons = array();
+
     public function add(Person $person)
     {
-        // TO IMPLEMENT
+        $this->persons[spl_object_hash($person)] = $person;
     }
 
     public function remove(Person $personToRemove)
@@ -21,6 +23,6 @@ class Enterprise
      */
     public function employ(Person $person)
     {
-        // TO IMPLEMENT
+        return isset($this->persons[spl_object_hash($person)]) ? true : false;
     }
 }
