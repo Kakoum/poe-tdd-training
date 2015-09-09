@@ -4,12 +4,15 @@ namespace tp2;
 
 use tp2\Person;
 use tp2\Enterprise;
+use tp2\Exception\AlreadyEmployedException;
 
 class HRDepartment
 {
-    public function __construct(Enterprise $entreprise)
+    protected $enterprise;
+
+    public function __construct(Enterprise $enterprise)
     {
-        // TO IMPLEMENT
+        $this->enterprise = $enterprise;
     }
 
     /**
@@ -17,7 +20,14 @@ class HRDepartment
      */
     public function hire(Person $person)
     {
-        // TO IMPLEMENT
+        if($this->enterprise->employ($person))
+        {
+            throw new AlreadyEmployedException("This person is already an employee");
+        }
+        else
+        {
+            $this->enterprise->add($person);
+        }
     }
 
     /**

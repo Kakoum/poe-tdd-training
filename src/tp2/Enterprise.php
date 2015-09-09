@@ -15,7 +15,7 @@ class Enterprise
 
     public function remove(Person $personToRemove)
     {
-        // TO IMPLEMENT
+        unset($this->persons[spl_object_hash($personToRemove)]);
     }
 
     /**
