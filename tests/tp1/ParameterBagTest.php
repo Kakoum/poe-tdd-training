@@ -69,7 +69,7 @@ class ParameterBagTest extends \PHPUnit_Framework_TestCase
         $this->bag->remove('key1');
 
         // est-ce que c'est remove
-        $this->assertEquals(true, $this->bag->has('key1'));
+        $this->assertEquals(false, $this->bag->has('key1'));
 
         // elle doit exister
         $this->assertEquals(true, $this->bag->has('key2'));
