@@ -8,4 +8,4 @@ php:
 before_script:
   - composer install --prefer-dist
 
-script: phpunit tests/tp1 --coverage-text
+script: phpunit tests --coverage-text
