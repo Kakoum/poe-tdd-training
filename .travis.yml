@@ -8,4 +8,4 @@ php:
 before_script:
   - composer require symfony/http-foundation:${SYMFONY_VERSION}
 
-script: phpunit tests/tp1 --coverage-text
+script: phpunit tests --coverage-text
